@@ -1,0 +1,117 @@
+{
+  "users": [],
+  "monitoredBloggers": [
+    {
+      "userId": 1,
+      "bloggerId": "6278171447",
+      "bloggerName": "灵感研究所",
+      "id": 1784188986942,
+      "createdAt": "2026-07-16T08:03:06.942Z",
+      "lastPostId": "5318420761676616"
+    },
+    {
+      "userId": 1,
+      "bloggerId": "1648894531",
+      "bloggerName": "馮偉文",
+      "lastPostId": "5321364774064758",
+      "id": 1784251510873,
+      "createdAt": "2026-07-17T01:25:10.873Z"
+    },
+    {
+      "userId": 1,
+      "bloggerId": "1639529981",
+      "bloggerName": "flypig",
+      "lastPostId": "5320545790072932",
+      "id": 1784256092732,
+      "createdAt": "2026-07-17T02:41:32.732Z"
+    },
+    {
+      "userId": 1,
+      "bloggerId": "1677659222",
+      "bloggerName": "熊小默",
+      "lastPostId": "5320916995148716",
+      "id": 1784256119084,
+      "createdAt": "2026-07-17T02:41:59.084Z"
+    },
+    {
+      "userId": 1,
+      "bloggerId": "1887341152",
+      "bloggerName": "东来_ldldick",
+      "lastPostId": null,
+      "id": 1784259320581,
+      "createdAt": "2026-07-17T03:35:20.581Z"
+    },
+    {
+      "userId": 1,
+      "bloggerId": "2955878834",
+      "bloggerName": "影石刘靖康",
+      "lastPostId": null,
+      "id": 1784259330764,
+      "createdAt": "2026-07-17T03:35:30.764Z"
+    }
+  ],
+  "lotteryPosts": [
+    {
+      "bloggerName": "灵感研究所",
+      "postContent": "//@灵感研究所:🎁转发原微博分享教长辈用手机的那些事，带话题#你会教父母用AI吗#，8月1日抽一位朋友送出一台vivo X300 Ultra，评论点赞抽5副vivo TWS耳机，感谢大家的每一份支持！祝好运",
+      "postUrl": "https://weibo.com/status/undefined",
+      "prizes": [
+        "手机"
+      ],
+      "deadline": "8月1日",
+      "confidence": 0.9333333333333333,
+      "id": 1784188990252,
+      "createdAt": "2026-07-16T08:03:10.252Z"
+    },
+    {
+      "bloggerId": "6278171447",
+      "bloggerName": "灵感研究所",
+      "postId": "5321329458810768",
+      "postContent": "//@灵感研究所:🎁转发原微博分享教长辈用手机的那些事，带话题#你会教父母用AI吗#，8月1日抽一位朋友送出一台vivo X300 Ultra，评论点赞抽5副vivo TWS耳机，感谢大家的每一份支持！祝好运",
+      "postUrl": "https://weibo.com/status/5321329458810768",
+      "prizes": [
+        "手机"
+      ],
+      "deadline": "8月1日",
+      "confidence": 0.7333333333333333,
+      "id": 1784254018339,
+      "createdAt": "2026-07-17T02:06:58.339Z"
+    },
+    {
+      "bloggerId": "6278171447",
+      "bloggerName": "灵感研究所",
+      "postId": "5320169498871474",
+      "postContent": "今年最期待的车除了问界M9就是接下来的尊界V800/680再看看智界RX/享界V8朋友们关注今年的哪些车？评论抽个随机周边  抽奖详情",
+      "postUrl": "https://weibo.com/status/5320169498871474",
+      "prizes": [
+        "未知奖品"
+      ],
+      "deadline": null,
+      "confidence": 0.4,
+      "id": 1784254018346,
+      "createdAt": "2026-07-17T02:06:58.346Z"
+    },
+    {
+      "bloggerId": "1648894531",
+      "bloggerName": "馮偉文",
+      "postId": "5321585021160709",
+      "postContent": "转发微博，7 月 21 日抽粉丝送出 1 部 REDMI Note 17 Pro ~作为新一代小金刚的 REDMI Note 17 Pro，#Note小金刚防摔防水长续航# 依旧以耐用为主旨。无论是外表显而易见的防护，还是内部那些看不到的组件。都能让你以更从容的心态，应对日常生活中可能出现的每一个突发情况。 REDMI Note 17 Pro 体验：能应对意外，更能减少意外  ...全文",
+      "postUrl": "https://weibo.com/status/5321585021160709",
+      "prizes": [
+        "未知奖品"
+      ],
+      "deadline": "7 月 21 日",
+      "confidence": 0.4666666666666667,
+      "id": 1784254018640,
+      "createdAt": "2026-07-17T02:06:58.640Z"
+    }
+  ],
+  "notifications": [
+    {
+      "lotteryPostId": 1784188990252,
+      "sent": true,
+      "sentAt": "2026-07-16T08:03:10.850Z",
+      "id": 1784188990850
+    }
+  ]
+}

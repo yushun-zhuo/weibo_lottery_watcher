@@ -1,26 +1,31 @@
 {
-  "name": "weibo_lottery_watcher",
+  "name": "weibo-lottery-watcher",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "monitor": "node src/scripts/start-monitor.js",
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "axios": "^1.18.1",
+    "next": "14.2.5",
+    "node-cron": "^4.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "dotenv": "^16.4.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "@types/node": "^20.19.43",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.5.19",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
   }
 }

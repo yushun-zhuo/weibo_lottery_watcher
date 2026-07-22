@@ -1,0 +1,40 @@
+module.exports = {
+  apps: [
+    {
+      name: 'weibo-lottery-watcher',
+      script: 'node_modules/.bin/next',
+      args: 'start',
+      cwd: '/home/ubuntu/weibo_lottery_watcher',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3000,
+      },
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+      error_file: './logs/error.log',
+      out_file: './logs/out.log',
+      merge_logs: true,
+    },
+    {
+      name: 'weibo-monitor',
+      script: 'node',
+      args: 'src/scripts/start-monitor.js',
+      cwd: '/home/ubuntu/weibo_lottery_watcher',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3000,
+      },
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '500M',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+      error_file: './logs/monitor-error.log',
+      out_file: './logs/monitor-out.log',
+      merge_logs: true,
+    },
+  ],
+};
