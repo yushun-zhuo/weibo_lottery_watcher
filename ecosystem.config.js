@@ -20,8 +20,8 @@ module.exports = {
     },
     {
       name: 'weibo-monitor',
-      script: 'node',
-      args: 'src/scripts/start-monitor.js',
+      script: 'npx',
+      args: 'ts-node src/scripts/start-monitor.ts',
       cwd: '/home/ubuntu/weibo_lottery_watcher',
       env: {
         NODE_ENV: 'production',

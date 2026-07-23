@@ -19,12 +19,26 @@ function getMonitorInterval() {
 }
 
 function runMonitor() {
-  const { runMonitor: monitorFunc } = require('../lib/monitor');
-  return monitorFunc().then(() => {
-    console.log(`Monitor completed at ${new Date().toLocaleString()}`);
-  }).catch((error) => {
-    console.error(`Monitor failed: ${error.message}`);
-  });
+  try {
+    const { runMonitor: monitorFunc } = require('../lib/monitor');
+    return monitorFunc().then(() => {
+      console.log(`Monitor completed at ${new Date().toLocaleString()}`);
+    }).catch((error) => {
+      console.error(`Monitor failed: ${error.message}`);
+    });
+  } catch (e) {
+    console.log('Trying to load from .next/server...');
+    try {
+      const { runMonitor: monitorFunc } = require('../../.next/server/app/api/monitor/route.js');
+      return monitorFunc().then(() => {
+        console.log(`Monitor completed at ${new Date().toLocaleString()}`);
+      }).catch((error) => {
+        console.error(`Monitor failed: ${error.message}`);
+      });
+    } catch (e2) {
+      console.error('Failed to load monitor module:', e2.message);
+    }
+  }
 }
 
 const interval = getMonitorInterval();
