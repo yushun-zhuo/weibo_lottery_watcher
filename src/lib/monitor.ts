@@ -7,18 +7,28 @@ import path from 'path';
 
 const getFeishuWebhook = (): string => {
   if (process.env.FEISHU_WEBHOOK_URL) {
+    console.log('FEISHU_WEBHOOK_URL from environment');
     return process.env.FEISHU_WEBHOOK_URL;
   }
   
   const envFiles = ['.env.local', '.env'];
+  const projectRoot = path.resolve(__dirname, '../../..');
+  console.log('Project root:', projectRoot);
+  
   for (const file of envFiles) {
-    const envPath = path.join(process.cwd(), file);
+    const envPath = path.join(projectRoot, file);
+    console.log(`Checking env file: ${envPath}`);
     if (fs.existsSync(envPath)) {
       const content = fs.readFileSync(envPath, 'utf-8');
       const match = content.match(/FEISHU_WEBHOOK_URL=(.+)/);
-      if (match) return match[1];
+      if (match) {
+        console.log('FEISHU_WEBHOOK_URL loaded from:', file);
+        return match[1];
+      }
     }
   }
+  
+  console.warn('FEISHU_WEBHOOK_URL not found in any env file');
   return '';
 };
 
