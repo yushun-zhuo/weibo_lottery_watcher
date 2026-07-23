@@ -2,7 +2,6 @@ require('dotenv').config();
 const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
-const http = require('http');
 
 let lastRunMinute = -1;
 
@@ -19,38 +18,19 @@ function getMonitorInterval() {
   return intervalMatch ? parseInt(intervalMatch[1]) : 60;
 }
 
-function triggerMonitor() {
-  const options = {
-    hostname: 'localhost',
-    port: process.env.PORT || 3000,
-    path: '/api/cron',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  };
-
-  const req = http.request(options, (res) => {
-    let data = '';
-    res.on('data', (chunk) => {
-      data += chunk;
-    });
-    res.on('end', () => {
-      console.log(`Monitor triggered: ${data}`);
-    });
+function runMonitor() {
+  const { runMonitor: monitorFunc } = require('../lib/monitor');
+  return monitorFunc().then(() => {
+    console.log(`Monitor completed at ${new Date().toLocaleString()}`);
+  }).catch((error) => {
+    console.error(`Monitor failed: ${error.message}`);
   });
-
-  req.on('error', (e) => {
-    console.error(`Error triggering monitor: ${e.message}`);
-  });
-
-  req.end();
 }
 
 const interval = getMonitorInterval();
 console.log(`Starting monitor scheduler with ${interval} minute interval...`);
 
-triggerMonitor();
+runMonitor();
 
 cron.schedule('* * * * *', () => {
   const currentMinute = new Date().getMinutes();
@@ -59,6 +39,6 @@ cron.schedule('* * * * *', () => {
   if (currentMinute % interval === 0 && currentMinute !== lastRunMinute) {
     lastRunMinute = currentMinute;
     console.log(`Triggering monitor at ${new Date().toLocaleString()} (interval: ${interval}min)`);
-    triggerMonitor();
+    runMonitor();
   }
 });
